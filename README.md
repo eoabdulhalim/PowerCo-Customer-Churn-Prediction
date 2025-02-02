@@ -30,18 +30,6 @@ The repository is organized as follows:
 
 ## Dependencies
 
-This project requires the following Python libraries:
-Check the requirements.txt file
-- `numpy`
-- `pandas`
-- `matplotlib`
-- `seaborn`
-- `scikit-learn`
-- `streamlit`
-- `joblib`
-- `mlflow` (Optional, for model tracking)
-- `pickle` (Optional, for model serialization)
-  
 To install all dependencies, you can create a `virtual environment` and install the required libraries via `requirements.txt`:
 
 ```bash
