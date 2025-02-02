@@ -1,27 +1,27 @@
-# PowerCo-Customer-Churn-Prediction
-
-Here's a professional README for your project repository:
-
----
-
-# Customer Churn Prediction: EDA & Random Forest Model
+# PowerCo Customer Churn Prediction: EDA & Random Forest Model
 
 ## Overview
 
-This project focuses on predicting customer churn for a PowerCo company using machine learning techniques. It involves an **Exploratory Data Analysis (EDA)** to understand the data and uncover patterns, followed by the development of a **Random Forest model** to predict customer churn. The project also includes a **full deployment pipeline** using **Streamlit** for building an interactive web application that showcases the model's predictions.
+This project is a part of **The Forage Job Simulation offered by BCG X Company**, It focuses on predicting customer churn for BCG's Client PowerCo company using machine learning. It involves an **Exploratory Data Analysis (EDA)** to understand the data and uncover patterns, followed by the development of a **Random Forest model** to predict customer churn. I added an extra feature a **full deployment pipeline** using **Streamlit** for building an interactive web application that showcases the model's predictions.
 
-## Project Structure
+## Repository Structure
+The repository is organized as follows:
+├── eda_notebook.ipynb            # Jupyter notebook for Exploratory Data Analysis
+├── model_training_notebook.ipynb  # Jupyter notebook for training the Random Forest model
+├── model_production.py           # Python script for model training, evaluation, and prediction pipeline
+├── app.py                        # Streamlit app for model deployment
+├── requirements.txt              # List of dependencies required to run the project
+└── README.md                     # Project README file (this file)
 
-The repository is organized into the following files:
-
-1. **`eda_notebook.ipynb`**  
+1. **`BCGX_Data Science_EDA_notebook.ipynb`**  
    This Jupyter notebook includes the full **Exploratory Data Analysis (EDA)**. It focuses on data cleaning, visualization, and feature engineering, allowing insights into the customer churn dataset.
 
 2. **`model_training_notebook.ipynb`**  
    This notebook contains the code for building the **Random Forest model** for predicting customer churn. The notebook covers the steps of model training, hyperparameter tuning, and model evaluation using metrics such as accuracy, precision, recall, and F1-score.
-
+   I used **MLFlow** for version control and experiment tracking to select the best model.
+   
 3. **`model_production.py`**  
-   This Python script contains all the essential functions for model training, evaluation, and prediction. It also includes the complete **model pipeline** that integrates preprocessing, model training, and generating predictions for unseen data.
+   This Python script contains all the essential functions for data preprocessing, feature engineering, and prediction. It also includes the complete **model pipeline** that integrates preprocessing, feature engineering, and generating predictions for unseen data.
 
 4. **`app.py`**  
    This script is used for **deployment with Streamlit**, providing a simple web interface for users to input data and receive churn predictions in real time. It showcases how the trained model can be deployed for production use.
@@ -29,7 +29,7 @@ The repository is organized into the following files:
 ## Dependencies
 
 This project requires the following Python libraries:
-
+Check the requirements.txt file
 - `numpy`
 - `pandas`
 - `matplotlib`
@@ -61,10 +61,10 @@ The **EDA** phase involves understanding the dataset, identifying key trends, an
 
 In the **Model Training** notebook, a **Random Forest Classifier** is used to predict customer churn. The steps followed include:
 
-- Data Preprocessing: Splitting the dataset into training and test sets, handling missing values, and scaling the features
+- Data Preprocessing: Splitting the dataset into training and test sets, encoding categorical features, and handling imbalanced target
 - Model Training: Using the Random Forest algorithm to train the model
 - Hyperparameter Tuning: Finding the optimal hyperparameters using techniques like GridSearchCV
-- Model Evaluation: Assessing the model's performance using metrics such as accuracy, precision, recall, and F1-score
+- Model Evaluation: Using MLFlow in assessing the model's performance using metrics such as accuracy, precision, recall, and F1-score
 - Saving the trained model using **Joblib** for future use.
 
 ### 3. **Model Production Pipeline**
@@ -72,19 +72,19 @@ In the **Model Training** notebook, a **Random Forest Classifier** is used to pr
 The `model_production.py` script includes:
 
 - A pipeline for **preprocessing** the input data
-- Functions for **training** the Random Forest model
-- Methods for **evaluating** the model's performance
-- **Saving and loading** the trained model for production use
+- Function for applying feature engineering for the new data
+- Function for encoding categorical features for the new data
+- Function for combining all transformations into one pipeline and generating the final result as a data frame to download by the user feature engineering for the new data
 
-The model is saved using **Joblib** or **Pickle**, ensuring it can be loaded for making predictions in the deployment phase.
+The model is saved using **Joblib**, ensuring it can be loaded for making predictions in the deployment phase.
 
 ### 4. **Deployment with Streamlit**
 
 The `app.py` file is a Streamlit-based web application that allows users to interact with the model. Users can:
 
-- Input customer data through a web form
-- Submit the data to the model to receive a churn prediction
-- View the prediction results and associated probabilities
+- Input new customer data through a web upload option
+- Submit the data to the model to receive a churn prediction for the full data
+- Download the prediction results into a CSV file
 
 To run the Streamlit app locally, use the following command:
 
@@ -116,20 +116,6 @@ You can use the `model_production.py` script to integrate the trained model into
 
 ## Example Usage
 
-- **Input Data (Streamlit UI)**: The user will input features like customer details, usage patterns, account history, etc.
-- **Output**: The model will predict whether the customer is likely to churn or not, along with the probability of churn.
+- **Input Data (Streamlit UI)**: The user will upload CSV file containing new data with the same structure of the data which the model trained on, usage patterns, account history, etc.
+- **Output**: The model will predict whether the customer is likely to churn or not, along with the probability of churn, you will receive a CSV file ready to download containing Customer ID, Channel Sales, Prediction.
 
-## Future Improvements
-
-- **Model Improvements**: Experiment with other algorithms such as Gradient Boosting or XGBoost to compare results.
-- **Hyperparameter Optimization**: Implement more advanced hyperparameter tuning techniques such as RandomizedSearchCV or Bayesian Optimization.
-- **Model Versioning**: Use **MLflow** for better model tracking and versioning to keep track of the performance of different models.
-- **Model Interpretability**: Use tools like SHAP or LIME to explain model predictions and improve user trust in the deployed solution.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize the README further based on specific needs or additional features that your project may include! Let me know if you need further adjustments or details!
