@@ -6,12 +6,14 @@ This project is a part of **The Forage Job Simulation offered by BCG X Company**
 
 ## Repository Structure
 The repository is organized as follows:
+```plaintext
 ├── eda_notebook.ipynb            # Jupyter notebook for Exploratory Data Analysis
 ├── model_training_notebook.ipynb  # Jupyter notebook for training the Random Forest model
 ├── model_production.py           # Python script for model training, evaluation, and prediction pipeline
 ├── app.py                        # Streamlit app for model deployment
 ├── requirements.txt              # List of dependencies required to run the project
 └── README.md                     # Project README file (this file)
+```
 
 1. **`BCGX_Data Science_EDA_notebook.ipynb`**  
    This Jupyter notebook includes the full **Exploratory Data Analysis (EDA)**. It focuses on data cleaning, visualization, and feature engineering, allowing insights into the customer churn dataset.
