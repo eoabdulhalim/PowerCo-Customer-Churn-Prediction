@@ -16,10 +16,10 @@ The repository is organized as follows:
 ```
 
 1. **`BCGX_Data Science_EDA_notebook.ipynb`**  
-   This Jupyter notebook includes the full **Exploratory Data Analysis (EDA)**. It focuses on data cleaning, visualization, and feature engineering, allowing insights into the customer churn dataset.
+   This Jupyter notebook includes the full **Exploratory Data Analysis (EDA)**. It focuses on data cleaning, and visualization allowing insights into the customer churn dataset.
 
 2. **`model_training_notebook.ipynb`**  
-   This notebook contains the code for building the **Random Forest model** for predicting customer churn. The notebook covers the steps of model training, hyperparameter tuning, and model evaluation using metrics such as accuracy, precision, recall, and F1-score.
+   This notebook contains the code for building the **Random Forest model** for predicting customer churn. The notebook covers feature engineering, and the steps of model training, hyperparameter tuning, and model evaluation using metrics such as accuracy, precision, recall, and F1-score.
    I used **MLFlow** for version control and experiment tracking to select the best model.
    
 3. **`model_production.py`**  
@@ -44,14 +44,13 @@ The **EDA** phase involves understanding the dataset, identifying key trends, an
 
 - Loading and cleaning the dataset
 - Visualizing key features using histograms, boxplots, and correlation matrices
-- Identifying any missing or outlier values
-- Feature engineering and selection
 
 ### 2. **Model Training and Evaluation**
 
 In the **Model Training** notebook, a **Random Forest Classifier** is used to predict customer churn. The steps followed include:
 
 - Data Preprocessing: Splitting the dataset into training and test sets, encoding categorical features, and handling imbalanced target
+- Feature engineering and selection
 - Model Training: Using the Random Forest algorithm to train the model
 - Hyperparameter Tuning: Finding the optimal hyperparameters using techniques like GridSearchCV
 - Model Evaluation: Using MLFlow in assessing the model's performance using metrics such as accuracy, precision, recall, and F1-score
@@ -86,12 +85,15 @@ streamlit run app.py
 
 ### Step 1: Run EDA Notebook
 
-Start by analyzing the data through the **EDA notebook** (`eda_notebook.ipynb`). This will give you a clear understanding of the data, missing values, and correlations between different features. Make necessary adjustments to prepare the data for modeling.
+Start by analyzing the data through the **EDA notebook** (`eda_notebook.ipynb`). This will give you a clear understanding of the data and correlations between different features.
 
 ### Step 2: Train and Evaluate Model
 
 Run the **Model Training notebook** (`model_training_notebook.ipynb`) to:
+Make necessary adjustments to prepare the data for modeling.
 
+- Data Preprocessing: Splitting the dataset into training and test sets, encoding categorical features, and handling imbalanced target
+- Feature engineering and selection
 - Train the **Random Forest model**
 - Tune hyperparameters to improve performance
 - Evaluate the model using metrics like accuracy, precision, recall, and F1-score
@@ -107,5 +109,5 @@ You can use the `model_production.py` script to integrate the trained model into
 ## Example Usage
 
 - **Input Data (Streamlit UI)**: The user will upload CSV file containing new data with the same structure of the data which the model trained on, usage patterns, account history, etc.
-- **Output**: The model will predict whether the customer is likely to churn or not, along with the probability of churn, you will receive a CSV file ready to download containing Customer ID, Channel Sales, Prediction.
+- **Output**: The model will predict whether the customer is likely to churn or not, you will receive a CSV file ready to download containing Customer ID, Channel Sales, Prediction.
 
