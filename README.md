@@ -1,7 +1,7 @@
 # PowerCo Customer Churn Prediction: EDA & Random Forest Model
 
 ## Overview
-
+### Test My Model on Production using this link: https://powerco-customer-churn-prediction.streamlit.app
 This project is a part of **The Forage Job Simulation offered by BCG X Company**, It focuses on predicting customer churn for BCG's Client PowerCo company using machine learning. It involves an **Exploratory Data Analysis (EDA)** to understand the data and uncover patterns, followed by the development of a **Random Forest model** to predict customer churn. I added an extra feature a **full deployment pipeline** using **Streamlit** for building an interactive web application that showcases the model's predictions.
 
 ## Repository Structure
