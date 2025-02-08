@@ -10,8 +10,8 @@ import os
 
 
 
-model = joblib.load(r"D:\1- Statistics and Computer Science\1- My Track\Machine Learning Projects\BCG X Customer Churn Prediction\Final files\model.pkl")
-sc = joblib.load(r"D:\1- Statistics and Computer Science\1- My Track\Machine Learning Projects\BCG X Customer Churn Prediction\Final files\scaler_ohe.pkl")
+model = joblib.load(r"model.pkl")
+sc = joblib.load(r"scaler_ohe.pkl")
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
