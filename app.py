@@ -17,6 +17,7 @@ sc = joblib.load(r"scaler_ohe.pkl")
 #current_dir = os.path.dirname(os.path.abspath(__file__))
 #image_path = os.path.join(current_dir, 'bgg.jpg')
 #st.image(image_path, use_container_width=True)
+st.image('bgg.jpg', use_container_width=True)
 
 uploaded_file = st.file_uploader("Upload your New Data of New/Existing Customers to Identify those at Risk of Churn.",type=["csv"])
 
