@@ -16,9 +16,9 @@ st.image('bgg.jpg')
 sample_data = 'New Customers Data.csv'  # Path to your CSV file in the same repository
 with open(sample_data, 'r') as f:
     csv_data = f.read()
-
+st.write("You will need customer data with the same structure to test the model. This is due to the nature of the company, which works with large volumes of customers, meaning the input data should not be limited to one customer at a time.")
 st.download_button(
-    label="📥 Download Sample Data",
+    label="📥 Download New Customers Data to Test Model",
     data=csv_data,
     file_name='sample_data.csv',
     mime="text/csv"
